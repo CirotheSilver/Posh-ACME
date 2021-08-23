@@ -68,7 +68,7 @@ function New-PAAccount {
         # There's a chance we may be creating effectively a duplicate account. So check
         # for confirmation if there's already one with the same contacts and keylength.
         if (-not $Force) {
-            $accts = @(Get-PAAccount -List -Refresh -Contact $Contact -KeyLength $KeyLength -Status 'valid')
+            $accts = @(Get-PAAccount -List -Contact $Contact -KeyLength $KeyLength -Status 'valid')
             if ($accts.Count -gt 0) {
                 if (-not $PSCmdlet.ShouldContinue("Do you wish to duplicate?",
                     "An account exists with matching contacts and key length.")) { return }
