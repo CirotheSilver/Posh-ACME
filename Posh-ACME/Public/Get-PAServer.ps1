@@ -17,6 +17,8 @@ function Get-PAServer {
 
     Process {
 
+        Write-Warning "This is a development version from the sslcom-compat branch"
+
         # List mode
         if ('List' -eq $PSCmdlet.ParameterSetName) {
 
